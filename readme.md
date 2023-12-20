@@ -8,7 +8,7 @@ A rewrite of [arialos/kernel](https://github.com/arialos/kernel) because the cod
 First, make sure you have install all the prerequisite tools for building. This guide is designed for Debian based distro but a table of equivalent packages can be found [here](https://wiki.osdev.org/GCC_Cross-Compiler#Installing_Dependencies).
 
 ```sh
-$ sudo apt install -y build-essential bison flex libgmp3-dev libmpc-dev libmpfr-dev texinfo
+$ sudo apt install -y build-essential bison flex libgmp3-dev libmpc-dev libmpfr-dev texinfo xorriso qemu-system-i386
 ```
 
 Then, simply build the cross compiler with:
@@ -25,7 +25,7 @@ $ ./toolchain/build_cc_linux.sh
 First, make sure you have install all the prerequisite tools for building:
 
 ```sh
-$ brew install gmp mpfr libmpc autoconf automake xorriso texinfo
+$ brew install gmp mpfr libmpc autoconf automake xorriso texinfo qemu
 ```
 
 Then, simply build the cross compiler with:
