@@ -1,7 +1,7 @@
 TARGET=i686-elf
 PROJDIRS := arch boot kernel lib
 DESTDIR = build
-INCLUDES = -Iarch/i686 -Ikernel -Iboot
+INCLUDES = -Ikernel -Iboot -Iarch/i686 -Iarch/i686/memory
 
 CC = $(HOME)/opt/cross/bin/$(TARGET)
 
