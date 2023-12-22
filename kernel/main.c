@@ -56,7 +56,7 @@ void main(multiboot_info_t *mbi, unsigned long magic)
     outb(0x3F8 + 4, 0x0F); // Enable interrupts, RTS/DSR set
   }
 
-  initPaging(mbi);
+  // initPaging(mbi);
 
   writeSerial("Hello World!\n");
 }
