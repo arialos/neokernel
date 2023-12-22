@@ -5,7 +5,7 @@
       "label": "Launch QEMU",
       "type": "shell",
       "linux": {
-        "command": "qemu-system-i386 -S -gdb tcp::1234 -cdrom arial.iso -vga std"
+        "command": "qemu-system-i386 -S -gdb tcp::1234 -cdrom arial.iso -vga std &"
       }
     }
   ]
