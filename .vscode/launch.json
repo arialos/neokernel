@@ -1,0 +1,29 @@
+{
+  "version": "0.2.0",
+  "configurations": [{
+    "name": "Launch with GDB",
+    "type": "cppdbg",
+    "request": "launch",
+    "program": "${workspaceRoot}/build/neo.elf",
+    "cwd": "${workspaceRoot}",
+    "args": [],
+    "targetArchitecture": "x86",
+    "MIMode": "gdb",
+    "miDebuggerPath": "/usr/bin/gdb",
+    "miDebuggerArgs": "",
+    "customLaunchSetupCommands": [
+      {
+        "text": "target remote localhost:1234",
+        "description": "Connect to QEMU remote debugger"
+      }
+    ],
+    "setupCommands": [
+      {
+        "text": "file /home/username/neokernel/build/neo.elf",
+        "description": "Load binary."
+      }
+    ],
+    "preLaunchTask": "Launch QEMU",
+    "configurations": []
+  }]
+}

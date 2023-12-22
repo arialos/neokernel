@@ -25,7 +25,7 @@ $ ./toolchain/build_cc_linux.sh
 First, make sure you have install all the prerequisite tools for building:
 
 ```sh
-$ brew install gmp mpfr libmpc autoconf automake xorriso texinfo qemu
+$ brew install gmp mpfr libmpc autoconf automake xorriso texinfo qemu gdb
 ```
 
 Then, simply build the cross compiler with:
