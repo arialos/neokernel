@@ -1,12 +1,13 @@
 {
-  "version": "2.0.0",
   "tasks": [
     {
-      "label": "Launch QEMU",
       "type": "shell",
-      "linux": {
-        "command": "qemu-system-i386 -S -gdb tcp::1234 -cdrom arial.iso -vga std &"
+      "label": "(Debug) Build the kernel and run qemu",
+      "command": "make debug",
+      "options": {
+        "cwd": "${workspaceRoot}",
       }
     }
-  ]
+  ],
+  "version": "2.0.0"
 }

@@ -52,18 +52,21 @@ version.h:
 iso: neo.elf
 	@mkdir build
 	@cp neo.elf limine.cfg limine/limine-bios.sys limine/limine-bios-cd.bin limine/BOOTIA32.EFI build
-	@xorriso -as mkisofs -b limine-bios-cd.bin -no-emul-boot -boot-load-size 4 -boot-info-table --efi-boot BOOTIA32.EFI -efi-boot-part --efi-boot-image --protective-msdos-label build -o arial.iso
+	@xorriso -as mkisofs -b limine-bios-cd.bin -no-emul-boot -boot-load-size 4 -boot-info-table --efi-boot BOOTIA32.EFI -efi-boot-part --efi-boot-image --protective-msdos-label build -o build/arial.iso
 
 format:
 	@clang-format -i $(CFILES) $(HDRFILES)
 
 clean:
 	@echo "Cleaning build directory..."
-	@rm -f $(OBJ) $(DEPFILES) arial.* *.img
+	@rm -f $(OBJ) $(DEPFILES) arial.* *.img *.iso
 	@rm -f $(VERSIONFILE)
 	@rm -rf $(DESTDIR)
 
 run: clean iso
-	qemu-system-i386 -serial stdio -cdrom arial.iso -vga std -d int -no-reboot 
+	qemu-system-i386 -serial stdio -cdrom build/arial.iso -vga std -d int -no-reboot
+
+debug: clean iso
+	qemu-system-i386 -s -cdrom build/arial.iso
 
 -include $(DEPFILES)
